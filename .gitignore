@@ -1,0 +1,14 @@
+# Auth credentials & tokens
+auth.json
+
+# Runtime session history
+sessions/
+
+# Auto-cloned package repos (e.g. git: packages) and their node_modules
+git/
+
+# Auto-populated extensions directory
+extensions/
+
+# Temporary / compiled runtime files
+temp/

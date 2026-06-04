@@ -1,0 +1,27 @@
+{
+  "lastChangelogVersion": "0.78.0",
+  "defaultProvider": "anthropic",
+  "defaultModel": "claude-opus-4-8",
+  "defaultThinkingLevel": "medium",
+  "theme": "catppuccin-mocha",
+  "packages": [
+    "git:github.com/Otard95/pi-extensions"
+  ],
+  "hideThinkingBlock": false,
+  "searxng": {
+    "url": "https://searxng.core-lab.net/",
+    "authorization": "proton:Personal/stian_searxng/API_KEY"
+  },
+  "protected-files": {
+    "patterns": [
+      "*.env*",
+      ".secret*",
+      "secrets/**",
+      "*.pem",
+      "*.key",
+      "FrameWork/settings.json",
+      "FrameWork/settings.*.json",
+      "services.json"
+    ]
+  }
+}
