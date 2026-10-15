@@ -1,27 +1,17 @@
 {
-  "lastChangelogVersion": "0.79.10",
-  "defaultProvider": "anthropic",
-  "defaultModel": "claude-opus-4-8",
+  "lastChangelogVersion": "1.0.3",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-6-luna",
   "defaultThinkingLevel": "medium",
   "theme": "catppuccin-mocha",
   "packages": [
-    "git:github.com/Otard95/pi-extensions"
+    "npm:@hypabolic/pi-hypa",
+    "npm:pi-web-access",
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:@juicesharp/rpiv-todo",
+    "npm:@ff-labs/pi-fff",
+    "npm:pi-subagents@0.78.0",
+    "../../Documents/ChatGPT/Homelab/pi-mattpocock-compat"
   ],
-  "hideThinkingBlock": false,
-  "searxng": {
-    "url": "https://searxng.core-lab.net/",
-    "authorization": "proton:Personal/stian_searxng/API_KEY"
-  },
-  "protected-files": {
-    "patterns": [
-      "*.env*",
-      ".secret*",
-      "secrets/**",
-      "*.pem",
-      "*.key",
-      "FrameWork/settings.json",
-      "FrameWork/settings.*.json",
-      "services.json"
-    ]
-  }
+  "hideThinkingBlock": true
 }
