@@ -11,7 +11,7 @@
     "npm:@juicesharp/rpiv-todo",
     "npm:@ff-labs/pi-fff",
     "npm:pi-subagents@0.78.0",
-    "../../Documents/ChatGPT/Homelab/pi-mattpocock-compat"
+    "../../Projects/pi-matt-compat/pi-mattpocock-compat"
   ],
   "hideThinkingBlock": true
 }
