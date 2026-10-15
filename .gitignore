@@ -30,3 +30,9 @@ __pycache__/
 # Local runtime state
 logs/
 missions/
+trust.json
+web-search.json
+pi-subagents/last-seen-version.json
+fff/
+bin/
+install/
