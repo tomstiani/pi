@@ -5,7 +5,7 @@ description: Use clickup-cli for ClickUp tasks, lists, spaces, comments, time tr
 
 # ClickUp CLI
 
-Requires `CLICKUP_API_TOKEN` and `CLICKUP_TEAM_ID`.
+Requires `CLICKUP_API_TOKEN`. Older builds also require `CLICKUP_TEAM_ID`; builds with `config set` can use saved workspace defaults.
 
 ```bash
 clickup-cli <command> [flags]
@@ -18,6 +18,15 @@ clickup-cli <command> --help
 - Read-only commands can run normally.
 - Before creating, editing, commenting, updating status, or otherwise mutating ClickUp data, show the command and get explicit user approval.
 - Never print or expose `CLICKUP_API_TOKEN`.
+- After an uncertain creation attempt, reconcile the existing outcome before another write. A helper or fresh draft is not a retry workaround.
+
+## Codemode and structured output
+
+Use `codemode` → `tools.bash` for ClickUp data operations. If codemode is unavailable, offer enabling it with `pi --tools +codemode`; obtain agreement before falling back to direct tools. This skill does not change global tool settings.
+
+Inspect CLI root `--help` for `--json`. When supported, request JSON, check the exit code and truncation, then parse and filter inside the script. Return only the fields needed for the current question, preserving pagination/completeness metadata and full requirements when needed. For older CLI builds, explain the missing JSON support and offer an upgrade or an explicitly agreed legacy workflow.
+
+Before writing a ClickUp codemode script, read [codemode execution](references/codemode.md) for the tool-result contract, an example, and failure handling. Complete task drafts must reach the user unchanged; run mutations only in a separate script after explicit approval.
 
 ## Task IDs
 
@@ -45,7 +54,9 @@ Descriptions accept Markdown. Assignee filters use numeric user IDs; `assignees[
 
 ### Create a top-level task
 
-The CLI cannot create top-level tasks or assign them. After approval, use the bundled helper, which resolves the authenticated user's numeric ID when `--assign-me` is passed:
+Inspect `clickup-cli task --help` first. If it lists `draft`, `preview`, and `create`, follow [native reviewed task creation](references/native-task-creation.md). That workflow resolves the sprint and assignee, binds approval to a saved draft, and verifies the created task.
+
+Only when the installed build lacks those commands, use the legacy helper after approval. It resolves the authenticated user's numeric ID with `--assign-me`:
 
 ```bash
 ~/.config/pi/skills/clickup-cli/scripts/create-task.py LIST_ID "Task title" \
@@ -67,7 +78,7 @@ clickup-cli list info LIST_ID
 clickup-cli list tasks LIST_ID [-a] [-A USER_IDS]
 ```
 
-Use `list info` to discover valid statuses before updating a task. For "current sprint", inspect the space structure, choose the sprint whose date range contains today, and confirm it with `list info`.
+Use `list info` to discover valid statuses before updating a task. Builds with native drafts use `sprint current` and an explicitly configured sprint folder. On older builds, inspect the space structure, identify the sprint whose date range contains today, and confirm it with `list info`; ask if the choice is missing or ambiguous.
 
 ## Comments and time
 
