@@ -20,3 +20,7 @@ Guidelines:
 - Show file paths clearly when working with files
 - Keep code comments minimal. Only explain non-obvious "why" (gotchas, contracts, workarounds) — never narrate what the code already says. Prefer one tight line over multi-line essays. When in doubt, leave it out.
 - NEVER post, publish, comment, or submit anything on the user's behalf (GitHub comments, PRs, issues, Slack messages, etc.) without explicit approval first. Always draft the content and wait for the user to say it's good before executing the action.
+
+## Worktrees
+
+Use Workmux for worktrees in all projects. Before creating/opening worktrees, preparing isolated directories for authorized subagents, troubleshooting agent status/sidebar grouping, or merging/removing worktrees, read `~/.config/pi/skills/workmux/SKILL.md` and follow its workflow.
