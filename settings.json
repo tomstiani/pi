@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "1.0.3",
+  "lastChangelogVersion": "1.3.0",
   "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-6-luna",
+  "defaultModel": "gpt-6.1-sol",
   "defaultThinkingLevel": "medium",
   "theme": "catppuccin-mocha",
   "packages": [
@@ -13,5 +13,67 @@
     "npm:pi-subagents@0.78.0",
     "../../Projects/pi-matt-compat/pi-mattpocock-compat"
   ],
+  "subagents": {
+    "defaultModel": "openai-codex/gpt-6-luna",
+    "defaultThinking": "medium",
+    "agentOverrides": {
+      "scout": {
+        "model": "openai-codex/gpt-6-luna",
+        "thinking": "low"
+      },
+      "researcher": {
+        "model": "openai-codex/gpt-6-luna",
+        "thinking": "low"
+      },
+      "delegate": {
+        "model": "openai-codex/gpt-6-luna",
+        "thinking": "medium"
+      },
+      "worker": {
+        "model": "openai-codex/gpt-6-luna",
+        "thinking": "medium"
+      },
+      "reviewer": {
+        "model": "openai-codex/gpt-6-luna",
+        "thinking": "medium"
+      },
+      "evidence-auditor": {
+        "model": "openai-codex/gpt-6-luna",
+        "thinking": "medium"
+      },
+      "oracle": {
+        "model": "openai-codex/gpt-6-sol",
+        "thinking": "high"
+      },
+      "planner": {
+        "model": "openai-codex/gpt-6-luna",
+        "thinking": "medium"
+      },
+      "matt-compat.scout": {
+        "model": "openai-codex/gpt-6-luna",
+        "thinking": "low"
+      },
+      "matt-compat.researcher": {
+        "model": "openai-codex/gpt-6-luna",
+        "thinking": "low"
+      },
+      "matt-compat.worker": {
+        "model": "openai-codex/gpt-6-luna",
+        "thinking": "medium"
+      },
+      "matt-compat.merger": {
+        "model": "openai-codex/gpt-6-luna",
+        "thinking": "low"
+      },
+      "matt-compat.standards-reviewer": {
+        "model": "openai-codex/gpt-6-luna",
+        "thinking": "medium"
+      },
+      "matt-compat.spec-reviewer": {
+        "model": "openai-codex/gpt-6-luna",
+        "thinking": "medium"
+      }
+    }
+  },
   "hideThinkingBlock": true
 }
