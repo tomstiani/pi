@@ -6,6 +6,7 @@ mcp-oauth/
 # Runtime session history
 sessions/
 run-history.jsonl
+docs/
 
 # Generated caches
 mcp-cache.json
@@ -18,8 +19,11 @@ models-store.json
 git/
 npm/
 
-# Auto-populated extensions directory
-extensions/
+# Ignore installed extensions; allowlist maintained custom sources
+/extensions/*
+!/extensions/git-interceptor.ts
+!/extensions/pi-cloak.ts
+!/extensions/workmux-status.ts
 
 # Temporary / compiled runtime files
 temp/
